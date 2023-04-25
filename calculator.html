@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script type="text/javascript" src="js/jquery3.js"></script>
+</head>
+<style type="text/css">
+	.title{
+			text-align: center;
+			font-size: 21px;
+			background-color: darkblue;
+			color: white;
+			text-transform: uppercase;
+		}
+		input[type="button"]{
+			background-color: skyblue;
+			width: 100%;
+			color: black;
+			padding: 10px;
+		}
+		input[type="text"]{
+			background-color: #white;
+			color: black;
+			padding: 10px;
+			width: 100%;
+			text-align: right;
+		}
+</style>
+
+<body>
+	<div class="col-md-12" style="padding-top: 35px;">
+		<div class="col-md-6">
+			<table border="1" cellpadding="0" cellspacing="1">
+				<tr>
+					<td colspan="4" class="title">
+						<p>Calculator</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<input type="text" placeholder="0" id="result">
+					</td>
+					<td>
+						<input type="button" value="AC" id="ac">
+					</td>
+				</tr>
+				<tr>
+					<td><input class="no" type="button" value="1" id="one"></td>
+					<td><input class="no" type="button" value="2" id="two"></td>
+					<td><input class="no" type="button" value="3" id="three"></td>
+					<td><input class="no" type="button" value="/" id="div"></td>
+				</tr>
+				<tr>
+					<td><input class="no" type="button" value="4" id="four" ></td>
+					<td><input class="no" type="button" value="5" id="five" ></td>
+					<td><input class="no" type="button" value="6" id="six" ></td>
+					<td><input class="no" type="button" value="+" id="add"></td>
+				</tr>
+				<tr>
+					<td><input class="no"type="button" value="7" id="seven" ></td>
+					<td><input class="no"type="button" value="9" id="nine" ></td>
+					<td><input class="no"type="button" value="8" id="eight" ></td>
+					<td><input class="no"type="button" value="-" id="minus"></td>
+				</tr>
+				<tr>
+					<td><input class="no" type="button" value="." id="dot"></td>
+					<td><input class="no" type="button" value="0" id="zero"></td>
+					<td><input type="button" value="=" id="eql" ></td>
+					<td><input class="no" type="button" value="*" id="mul"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+		$("#ac").click(function(){
+			$("#result").val("");
+		});
+
+		$(".no").click(function(){
+			var a = $("#result").val();
+			$("#result").val(a + $(this).val() );
+		});
+
+		$("#eql").click(function(){
+			var n = $("#result").val();
+			$("#result").val(eval(n));
+		});
+	});
+	</script>
+</body>
+</html>
